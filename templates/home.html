@@ -2,10 +2,162 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+  *
+  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body, html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  body 
+  {
+    font-size: 135%;
+    transition: background-color 1s ease;
+    min-height: 100vh;
+    background: rgb(58, 58, 58);
+    z-index: -1;
+  }
+  
+  header
+  {
+    position: absolute;
+    top: 0;
+    width: 0;
+    padding: 30px 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    position: absolute;
+    left: 0;
+  }
+  
+  header .dropdown
+  {
+    position: relative;
+  }
+  
+  
+  .menubar
+  {
+    width: 30px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 4px 0;  
+  }
+  
+  .btn-group
+  {
+    position: relative;
+  }
+  
+  
+  .logo
+  {
+    color: aliceblue;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: transparent !important;
+  }
+    *
+    {
+      zoom: 1;    
+    }
+    body
+    {
+      font-size: 90%;
+    }
+  
+    header
+    {
+      zoom: 1;
+      padding: 30px 70px;
+      height: 10vh;
+      display: flex;
+    }
+  
+    header .dropdown
+    {
+      display: none;
+    }
+    ul
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0 !important;
+    }
+    li
+    {
+      list-style: none;
+      margin-left: 20px;
+    }
+  
+    .li
+    {
+      list-style: decimal;
+    }
+  
+    a
+    {
+      transition: all .5s ease-in-out;
+      text-decoration: none;
+      padding: 6px 15px;
+      color: rgb(255, 255, 255);
+      border-radius: 20px;
+      background-color: #aeafd12a;
+    }
+  
+    a.active
+    {
+      transition: all .5s ease-in-out;
+      background: #ffffff;
+      color: #2b1055;
+    }
+  
+    a.hvr:hover
+    {
+      background: #ffffffaf;
+      color: #2b1055;
+    }
+  
+    #showDiv, #btn
+    {
+      zoom: 1;
+    }
+  
+    @media screen and (orientation: portrait){
+      .hvr
+      {
+        display: none;
+      }
+  
+      #ihome
+      {
+        display: inline !important;
+      }
+  }
+  
+  </style> 
+  <style>
     body {
-      margin: 0 auto;
-      max-width: 800px;
+      margin: 0;
       padding: 0 20px;
     }
 
@@ -14,7 +166,9 @@
       background-color: #f1f1f1;
       border-radius: 5px;
       padding: 10px;
-      margin: 10px 0;
+      margin: 0;
+      max-width: 80vw;
+      margin: 0 auto;
     }
 
     .darker {
@@ -56,9 +210,17 @@
 
 
   <body>
+    <header>
+      <a class="logo" href="https://trivind.pythonanywhere.com/">Trivind</a>
+      </script>
+      <ul>
+          <li><a href="https://trivind.pythonanywhere.com/" class="hvr" >Home</a></li>
+          <li><a href="/" class="hvr" id="ihome" >Room Chat</a></li>
+      </ul>    
+    </header>
 
-  <div align="center">
-      <h2>Django Chat</h2>
+  <div align="center" style="margin-top: 28vh;" class="container">
+      <h2>Room Chat</h2>
   </div>
 
 
@@ -98,13 +260,13 @@
 
       <form id="post-form" method="POST" action="checkview">
           {% csrf_token %}
-          <label>Room Name</label>
-          <input type="radio" name="room_name" value="male"> Male<br>
-          <input type="radio" name="room_name" value="female"> Female<br>
-          <input type="radio" name="room_name" value="other"> Other
-          <label>Username</label>
-          <input type="text" name="username" id="username" width="100px" />
-          <input type="submit" value="Enter Room">
+          <label></label>
+          <div class="form-control">
+            <input type="radio" name="room_name" value="Procastination" required> Procastination<br>
+            <input type="radio" name="room_name" value="Loneliness"> Loneliness<br>
+            <input type="radio" name="room_name" value="Socializing Issue"> Socializing Issue
+          </div>
+          <input type="submit" value="Masuk">
       </form>
   </div>
 
